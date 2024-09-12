@@ -5,7 +5,7 @@ CRUD, which stands for Create, Read, Update, and Delete forms the foundation of 
 
 **Running the Application:**
 To run the application, type ```go run main.go ``` into the terminal. Open another terminal and type ```curl localhost:3000/inventory``` - a GET request. 
-The output should result: Inventory System Project.  It'll mean the server is properly working. </br>
+The output should result: "Inventory System Project".  It'll mean the server is properly working. </br>
 If ```curl localhost:3000/```, it'll return 202 page not found because there is no handler for the / route. Go-Chi automatically handles it. </br>
 In the first terminal, to terminate the server, press Crtl + C. </br>
 
