@@ -34,4 +34,7 @@ Docker is an open-source platform that automates the deployment, scaling, and ma
 
 ```docker ps``` lists the running containers on Docker host. </br>
 ```sudo service redis-server stop``` stops any current Redis servers running. </br>
-```docker run -p 6379:6379 redis:latest``` will download and run the latest Redis img and bing the system 6379 port to the docker container 6379 port. To check the redis is running, type ```redis-cli``` in a second terminal and ```127.0.0.1:6379``` prompt is returned- can enter ```KEYS *``` to retrieve all keys in selected database.
+```docker run -p 6379:6379 redis:latest``` will download and run the latest Redis img and bing the system 6379 port to the docker container 6379 port. To check the redis is running, type ```redis-cli``` in a second terminal and ```127.0.0.1:6379``` prompt is returned- can enter ```KEYS *``` to retrieve all keys in selected database. </br>
+
+Using Google's UUID Package for assigning unique IDs to items. <br>
+To install, type: ```go get github.com/google/uuid```.
