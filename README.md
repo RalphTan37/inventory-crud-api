@@ -22,5 +22,16 @@ In the first terminal, to terminate the server, press Crtl + C. </br>
 **Third-Party Dependency:** </br>
 Using Go-Chi to manage HTTP requests and the middleware package for logging HTTP requests and responses.</br>
 Go-Chi is a lightweight, idiomatic and composable router for building Go HTTP services. </br>
-To install Go-Chi, type: ```go get -u github.com/go-chi/chi/v5``` in the terminal. Now an entry should be added to the go.mod file. </br>
-*Note:* go.sum file now exists - used to ensure consistency across package versions in case they are updated
+To install Go-Chi, type: ```go get -u github.com/go-chi/chi/v5``` in the terminal. An entry should be added to the go.mod file. </br>
+*Note:* go.sum file now exists - used to ensure consistency across package versions in case they are updated </br>
+
+Using Go-Redis as primary data storage. </br>
+Go-Redis is an in-memory data structure store - which makes it fast. The downside if that the data stored only usually lasts for a short time. Not as safe as PostgreSQL (probably the better chocie for this project). </br>
+To install Go-Redis, type: ```go get github.com/redis/go-redis/v9``` in the terminal. </br>
+
+*Using Docker to install Redis. </br>
+Docker is an open-source platform that automates the deployment, scaling, and management of applications using containerization - lightweight, standalone, and executable software packages. </br>
+
+```docker ps``` lists the running containers on Docker host. </br>
+```sudo service redis-server stop``` stops any current Redis servers running. </br>
+```docker run -p 6379:6379 redis:latest``` will download and run the latest Redis img and bing the system 6379 port to the docker container 6379 port. To check the redis is running, type ```redis-cli``` in a second terminal and ```127.0.0.1:6379``` prompt is returned- can enter ```KEYS *``` to retrieve all keys in selected database.
