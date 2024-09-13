@@ -4,7 +4,7 @@ The purpose of this personal project to deepen my understanding of web developme
 CRUD, which stands for Create, Read, Update, and Delete forms the foundation of applications that manage data. </br>
 
 **Running the Application:** </br>
-To run the application, type ```go run main.go ``` into the terminal. </br>
+To run the application, type ```go run main.go``` into the terminal. </br>
 Open another terminal and there are several commands that can be typed. </br>
 
 To add a new item in the inventory, type ```curl -X POST localhost:3000/inventory```. </br>
