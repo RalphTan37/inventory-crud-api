@@ -9,7 +9,7 @@ Open another terminal and there are several commands that can be typed. </br>
 
 To add a new item in the inventory, type ```curl -X POST localhost:3000/inventory -d '{ "item_ID": "123e4567-e89b-12d3-a456-426614174000", "name": "Example Item", "category": "Category A", "quantity": 10, "price": 19.99, "supplier": "Supplier Inc.", "location": "Warehouse 1", "status": "Available", "expiration_date": "2025-12-31T00:00:00Z" }'```. </br>
 To list all items in the inventory, type ```curl localhost:3000/inventory/```. </br>
-To get an item from the inventory by ID, type ```curl localhost:3000/inventory/```. </br>
+To get an item from the inventory by ID, type ```curl -X GET localhost:3000/inventory?cursor=0```. </br>
 To update an item in the inventory by ID, type ```curl -X PUT localhost:3000/inventory/123e4567-e89b-12d3-a456-426614174000```. </br>
 To delete an item in the inventory by ID, type ```curl -X DELETE localhost:3000/inventory/123e4567-e89b-12d3-a456-426614174000```. </br>
 
