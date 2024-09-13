@@ -12,7 +12,7 @@ import (
 
 func main() {
 	//new instance of the application
-	app := application.New()
+	app := application.New(application.LoadConfig())
 	//takes in a signal and a ctx, return another ctx that will be notified if the signal is created
 	ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt)
 

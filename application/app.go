@@ -13,12 +13,16 @@ import (
 type App struct {
 	router http.Handler
 	rdb    *redis.Client //stores Redis Client
+	config Config
 }
 
 // application constructor
-func New() *App { //returns a pointer to an instance of the application and an error
+func New(config Config) *App { //returns a pointer to an instance of the application and an error
 	app := &App{
-		rdb: redis.NewClient(&redis.Options{}), //creates new instance of Redis Client
+		rdb: redis.NewClient(&redis.Options{
+			Addr: config.RedisAddress,
+		}), //creates new instance of Redis Client
+		config: config,
 	}
 
 	app.loadRoutes()
@@ -30,7 +34,7 @@ func New() *App { //returns a pointer to an instance of the application and an e
 func (a *App) Start(ctx context.Context) error {
 	//instantiates an HTTP server
 	server := &http.Server{
-		Addr:    ":3000",
+		Addr:    fmt.Sprintf(":%d", a.config.ServerPort),
 		Handler: a.router,
 	}
 
