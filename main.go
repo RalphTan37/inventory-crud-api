@@ -1,33 +1,19 @@
 package main
 
 import (
-	"fmt"      //format package
-	"net/http" //functionality for creating HTTP clients & servers
+	"context"
+	"fmt"
 
-	"github.com/go-chi/chi/v5"            //Go-Chi Package
-	"github.com/go-chi/chi/v5/middleware" //Logging Middleware Package
+	"github.com/RalphTan37/inventory-system-crud-api-app/application"
 )
 
 func main() {
-	router := chi.NewRouter()     //initialize router, constructor
-	router.Use(middleware.Logger) //logs HTTP requests & responses
+	//new instance of the application
+	app := application.New()
 
-	router.Get("/inventory", basicHandler) //route for HTTP Get Request
-
-	//instantiates an HTTP server
-	server := &http.Server{
-		Addr:    ":3000",
-		Handler: router,
-	}
-
-	//initializes and starts HTTP server
-	err := server.ListenAndServe()
+	//start the application
+	err := app.Start(context.TODO())
 	if err != nil {
-		fmt.Println("Failed to Listen to Server", err)
+		fmt.Println("failed to start application:", err)
 	}
-}
-
-// handler for HTTP server
-func basicHandler(w http.ResponseWriter, r *http.Request) { //write and request parameters
-	w.Write([]byte("Inventory Management System Project")) //cast to []byte as Write expects it
 }

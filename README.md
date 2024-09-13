@@ -4,13 +4,20 @@ The purpose of this personal project to deepen my understanding of web developme
 CRUD, which stands for Create, Read, Update, and Delete forms the foundation of applications that manage data. </br>
 
 **Running the Application:** </br>
-To run the application, type ```go run main.go ``` into the terminal. <br>
-Open another terminal and type ```curl localhost:3000/inventory``` - a GET request. </br>
-The output should result: "Inventory System Project".  It'll mean the server is properly working. </br>
-If ```curl localhost:3000/```, it'll return 202 page not found because there is no handler for the / route. Go-Chi automatically handles it. </br>
-In the first terminal, to terminate the server, press Crtl + C. </br>
+To run the application, type ```go run main.go ``` into the terminal. </br>
+Open another terminal and there are several commands that can be typed. </br>
 
-For a POST request, type ```curl -X POST localhost:3000/inventory -v``` - which specifys the HTTP method and fully view the HTTP headers.
+To add a new item in the inventory, type ```curl -X POST localhost:3000/inventory```. </br>
+To list all items in the inventory, type ```curl localhost:3000/inventory/```. </br>
+To get an item from the inventory by ID, type ```curl localhost:3000/inventory/```. </br>
+To update an item in the inventory by ID, type ```curl -X PUT localhost:3000/inventory/item```. </br>
+To delete an item in the inventory by ID, type ```curl -X DELETE localhost:3000/inventory/item```. </br>
+
+*Notes:* </br>
+```-X``` - specifies the HTTP method </br>
+Can add ```-v``` at the end of the command line to fully view the HTTP headers </br>
+
+In the first terminal, to terminate the server, press Crtl + C. </br>
 
 **Third-Party Dependency:** </br>
 Using Go-Chi to manage HTTP requests and the middleware package for logging HTTP requests and responses.</br>
