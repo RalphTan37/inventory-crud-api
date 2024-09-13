@@ -16,6 +16,7 @@ To delete an item in the inventory by ID, type ```curl -X DELETE localhost:3000/
 *Notes:* </br>
 ```-X``` - specifies the HTTP method </br>
 Can add ```-v``` at the end of the command line to fully view the HTTP headers </br>
+```-d``` stands for data and used to send data as part of an HTTP request </br>
 
 In the first terminal, to terminate the server, press Crtl + C. </br>
 
