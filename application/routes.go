@@ -3,9 +3,9 @@ package application
 import (
 	"net/http"
 
-	"github.com/RalphTan37/inventory-system-crud-api-app/handler" //Import Handler Package
-	"github.com/go-chi/chi/v5"                                    //Go-Chi Package
-	"github.com/go-chi/chi/v5/middleware"                         //Logging Middleware Package
+	"github.com/RalphTan37/inventory-crud-api/handler" //Import Handler Package
+	"github.com/go-chi/chi/v5"                         //Go-Chi Package
+	"github.com/go-chi/chi/v5/middleware"              //Logging Middleware Package
 )
 
 func loadRoutes() *chi.Mux {

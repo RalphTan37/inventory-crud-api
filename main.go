@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/RalphTan37/inventory-system-crud-api-app/application"
+	"github.com/RalphTan37/inventory-crud-api/application"
 )
 
 func main() {
