@@ -18,9 +18,11 @@ type App struct {
 // application constructor
 func New() *App { //returns a pointer to an instance of the application and an error
 	app := &App{
-		router: loadRoutes(),
-		rdb:    redis.NewClient(&redis.Options{}), //creates new instance of Redis Client
+		rdb: redis.NewClient(&redis.Options{}), //creates new instance of Redis Client
 	}
+
+	app.loadRoutes()
+
 	return app
 }
 
