@@ -1,4 +1,4 @@
-module github.com/RalphTan37/inventory-system-crud-api-app
+module github.com/RalphTan37/inventory-crud-api
 
 go 1.22.3
 
